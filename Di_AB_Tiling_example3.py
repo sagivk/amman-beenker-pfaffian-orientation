@@ -7,23 +7,23 @@ from AB_Tiling import AB_tiling
 from G_ex import get_AB_tiling_kasteleyn_orientation_graph_calc_print
 
 AB1 = AB_tiling()
-#AB1.print_tiling()
 AB2 = AB1.inflate()
-#AB2.print_tiling()
-AB3 = AB2.inflate()
-#AB3.print_tiling()
-#AB4 = AB3.inflate()
-#AB5 = AB4.inflate()
-#Di_AB5 = get_AB_tiling_kasteleyn_orientation_graph_calc_print(AB5)
-#Di_AB4.Di_print(node_size = 10, labels = False)
+AB3 = AB2.inflate() #a 3 times inflated ab tiling star graph
 
-Di_AB3 = get_AB_tiling_kasteleyn_orientation_graph_calc_print(AB3)
+Di_AB3 = get_AB_tiling_kasteleyn_orientation_graph_calc_print(AB3) #makes if an oriented graph calc print
 
-Di_AB3.Di_print()
+Di_AB3.Di_print() #shows the graph
 
-Di_sub_test = Di_AB3.sub_graph(0,1)
+Di_sub_test = Di_AB3.sub_graph(0,0) #the function returns the graph without the central vertex (the 0 vertex and every neighbor of degree 0 of it, meaning only it)
 
-Di_sub_test.Di_print()
+Di_sub_test.Di_print() #shows the graph
+
+Di_sub_test = Di_AB3.sub_graph(0,1) #the function returns the graph without the central vertex and nearest neighbors to it
+
+Di_sub_test.Di_print() #shows the graph
+
+
+'''need to note that the returned graph is not reoriented after the remove of the nodes, which can make the returned graph to have a non kasteleyn orientation'''
 
 #r = 5
 #while r < 15:
